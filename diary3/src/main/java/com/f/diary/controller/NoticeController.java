@@ -78,5 +78,6 @@ public class NoticeController {
 	public String deleteNoticeList( NoticeVO vo , Model model ,HttpSession session) {
 		noticeService.deleteNotice(vo);
 		return "redirect:/selectNoticeList";
+		//what youur eta
 	}
 }
