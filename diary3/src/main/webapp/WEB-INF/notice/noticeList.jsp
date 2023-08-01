@@ -15,6 +15,11 @@ table {border:1px soli black;}
 		console.log(val);
 		location.href ="deleteNotice?n_num="+val;
 	}
+	
+	function selectNotice(val) {
+		console.log(val);
+		location.href="selectNotice?n_num="+val;
+	}
 </script>
 </head>
 <body>
@@ -37,7 +42,10 @@ table {border:1px soli black;}
 					<td>${notices.n_title}</td>
 				</tr>
 				<tr>
-					<td><button type="button" onclick="deleteNotice('${notices.n_num}')">버튼</button></td>
+					<td><button type="button" onclick="deleteNotice('${notices.n_num}')">삭제</button></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="selectNotice('${notices.n_num}')">조회</button></td>
 				</tr>
 		</table>
 	</c:forEach>
@@ -50,16 +58,6 @@ table {border:1px soli black;}
 
 
 <%@include file="../main/footer.jsp" %>
-<script>
-// function deleteNotice(val) {
-	const button = document.getElementById("button");
-// 	location.href="deleteNotice?n_num="+val;
-// }
-button.onclick = function() {
-    // 새로운 URL로 페이지를 이동합니다.
-    location.href = "deleteNotice"; // 원하는 URL을 여기에 입력하세요.
-  };
 
-</script>
 </body>
 </html>

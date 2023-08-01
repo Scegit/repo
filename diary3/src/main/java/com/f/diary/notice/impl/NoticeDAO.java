@@ -34,4 +34,9 @@ public class NoticeDAO {
 		mybatis.update("NoticeDAO.deleteNotice",vo);
 		
 	}
+	
+	//일기 보기
+	public NoticeVO selectNotice(NoticeVO vo) {
+		return mybatis.selectOne("NoticeDAO.selectNotice",vo);
+	}
 }

@@ -12,4 +12,7 @@ public interface NoticeService {
 	//글 삭제
 	void deleteNotice(NoticeVO vo);
 	
+	//일기 보기
+	NoticeVO selectNotice(NoticeVO vo);
+	
 }

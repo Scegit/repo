@@ -76,8 +76,15 @@ public class NoticeController {
 	//0731 deleteNotice controller 생성
 	@RequestMapping("/deleteNotice")
 	public String deleteNoticeList( NoticeVO vo , Model model ,HttpSession session) {
+		vo.setN_m_id((String) session.getAttribute("m_id"));
 		noticeService.deleteNotice(vo);
 		return "redirect:/selectNoticeList";
-		//what youur eta
+	}
+	
+	@RequestMapping("/selectNotice")
+	public String selectNotice(NoticeVO vo,Model model,HttpSession session) {
+		vo.setN_m_id((String)session.getAttribute("m_id"));
+		model.addAttribute("notice",noticeService.selectNotice(vo));
+		return "notice/noticeinfo";
 	}
 }
